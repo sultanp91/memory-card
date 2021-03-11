@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import uniqid from 'uniqid';
+import Card from './Card';
+import { gameData } from './gameData'
 
 function Container() {
-        const initalState = [
-            {card: "img1", count: 0, id: uniqid()},
-            {card: "img2", count: 0, id: uniqid()},
-            {card: "img3", count: 0, id: uniqid()},
-            {card: "img4", count: 0, id: uniqid()}]
+        const initalState = [...gameData]
 
         const [ score, setScore ] = useState(0);
         const [ maxScore, setMaxScore ] = useState(0);
@@ -22,18 +19,18 @@ function Container() {
 
         const playRound = (evt) => { 
             const card = Object.assign([], cards);
+            shuffle(card)
             for(let i = 0; i < card.length; i++){
                 if(card[i].id === evt.target.id && card[i].count === 0){
                     card[i].count = card[i].count + 1
                     setScore(score + 1)
+                    setCards(card)
                } else if(card[i].id === evt.target.id && card[i].count === 1){
                    setCards([...initalState])
                    setScore(0)
                }
             }
             
-           shuffle(card)
-           setCards(card)
         }
     
         useEffect(() => {
@@ -46,11 +43,14 @@ function Container() {
     return (
         <div>
             <h1>Current score: {score} Max Score: {maxScore}</h1>
-            {cards.map((item) => ( 
-                <p onClick={playRound} 
-                id={item.id}>
-                {item.card} - {item.count}
-                </p>))}
+            {cards.map((item) => 
+                <Card playRound={playRound} 
+                card={item.card}
+                id={item.id}/>
+            )
+                
+                
+            }
             
         </div>
     )

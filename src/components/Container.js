@@ -3,12 +3,10 @@ import Card from "./Card";
 import { gameData } from "./gameData";
 
 function Container() {
-  const initalState = [...gameData];
-
   const [score, setScore] = useState(0);
   const [maxScore, setMaxScore] = useState(0);
 
-  const [cards, setCards] = useState([...initalState]);
+  const [cards, setCards] = useState(JSON.parse(JSON.stringify(gameData)));
 
   const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -18,7 +16,7 @@ function Container() {
   };
 
   const playRound = (evt) => {
-    const card = Object.assign([], cards);
+    const card = [...cards];
     shuffle(card);
     for (let i = 0; i < card.length; i++) {
       if (card[i].id === evt.target.id && card[i].count === 0) {
@@ -26,7 +24,7 @@ function Container() {
         setScore(score + 1);
         setCards(card);
       } else if (card[i].id === evt.target.id && card[i].count === 1) {
-        setCards([...initalState]);
+        setCards(JSON.parse(JSON.stringify(gameData)));
         setScore(0);
       }
     }
@@ -45,7 +43,7 @@ function Container() {
       </h1>
       <div className="card-container">
         {cards.map((item) => (
-            <Card playRound={playRound} card={item.card} id={item.id} />
+            <Card playRound={playRound} card={item.card}/>
         ))}
       </div>
     </div>

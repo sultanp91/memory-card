@@ -1,12 +1,12 @@
 import React from "react";
 
-function Card({ card, id, playRound }) {
+function Card({ card, playRound }) {
   return (
-    <div className="card">
+    <div className="card-div">
       <img
         onClick={playRound}
-        key={id}
-        id={id}
+        key={card}
+        id={card}
         src={`./img/${card}.jpg`}
         alt={card}
         className="card-image"

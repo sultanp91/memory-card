@@ -23,5 +23,4 @@ export const gameData = [
     {card: "scyther", count: 0},
     {card: "snorlax", count: 0},
     {card: "squirtle", count: 0},
-    {card: "zapdos", count: 0}
 ]

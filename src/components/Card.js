@@ -7,7 +7,7 @@ function Card({ card, playRound }) {
         onClick={playRound}
         key={card}
         id={card}
-        src={`./img/${card}.jpg`}
+        src={`./img/${card}.png`}
         alt={card}
         className="card-image"
       />

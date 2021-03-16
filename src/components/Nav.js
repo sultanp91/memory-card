@@ -1,10 +1,12 @@
 import React from 'react'
 
-function Nav() {
+function Nav({score, maxScore}) {
     return (
-        <div>
-            Nav contents
-        </div>
+        <nav className="nav">
+            <h1>
+                Current score: {score} Max Score: {maxScore}
+            </h1>
+        </nav>
     )
 }
 

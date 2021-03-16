@@ -14,7 +14,7 @@ body {
 
 .nav {
   min-height: 10vh;
-  padding: 1npmrem 0;
+  padding: 1rem 0;
   background-color: #22223b;
   display: flex;
   flex-direction: column;
@@ -39,8 +39,8 @@ body {
 }
 
 .card-div {
-  height: 90%;
-  width: 80%;
+  height: 95%;
+  width: auto;
   border: none;
   margin: 1.5rem;
   padding: 1rem;

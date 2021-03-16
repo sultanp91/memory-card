@@ -8,15 +8,34 @@ html {
   font-size: 62.5%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: 'Passion One', cursive;
 }
 
+.nav {
+  min-height: 10vh;
+  height: 10rem;
+  background-color: #ffd166;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #073b4c;
+}
+
+.header{
+  font-size: 4rem;
+  letter-spacing: 1px;
+}
+.scoreboard {
+  font-size: 3rem;
+}
 .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  min-height: 90vh;
+  background-color: #06d6a0;
 }
 
 .card-div {
@@ -25,12 +44,12 @@ code {
   border: solid 1px black;
   margin: 1.5rem;
   padding: 1rem;
-  background: linear-gradient(to bottom, #2b64a8,  #5d93d5);
+  background: linear-gradient(to bottom, #118ab2,  #5d93d5);
   border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.6), 3px 3px 5px 6px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 1rem rgba(0, 0, 0, 0.6);
 }
 
 .card-image {

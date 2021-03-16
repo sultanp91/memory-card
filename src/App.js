@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
-import {gameData} from './components/gameData' 
-import Container from './components/Container';
-import Nav from './components/Nav';
-
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import { gameData } from "./components/gameData";
+import Container from "./components/Container";
+import Nav from "./components/Nav";
 
 function App() {
-
   const [score, setScore] = useState(0);
   const [maxScore, setMaxScore] = useState(0);
 
   const [cards, setCards] = useState(JSON.parse(JSON.stringify(gameData)));
-
 
   const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -42,12 +39,10 @@ function App() {
   }, [score, maxScore]);
 
   return (
-    
-      <div className="App">
-        <Nav score={score} maxScore={maxScore}/>
-        <Container cards={cards} playRound={playRound}/>
-      </div>
-   
+    <div className="App">
+      <Nav score={score} maxScore={maxScore} />
+      <Container cards={cards} playRound={playRound} />
+    </div>
   );
 }
 

@@ -5,7 +5,7 @@ function Nav({ score, maxScore }) {
     <nav className="nav">
       <h1 className="header">Memory Game!</h1>
       <h2 className="scoreboard">
-        Current score: {score} Max Score: {maxScore}
+        Current score: {score} High Score: {maxScore}
       </h2>
     </nav>
   );

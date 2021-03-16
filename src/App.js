@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
 import { gameData } from "./components/gameData";
 import Container from "./components/Container";
 import Nav from "./components/Nav";

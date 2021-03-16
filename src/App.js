@@ -20,11 +20,11 @@ function App() {
     const card = [...cards];
     shuffle(card);
     for (let i = 0; i < card.length; i++) {
-      if (card[i].card === evt.target.id && card[i].count === 0) {
+      if (card[i].card === evt.target.dataset.card && card[i].count === 0) {
         card[i].count = card[i].count + 1;
         setScore(score + 1);
         setCards(card);
-      } else if (card[i].card === evt.target.id && card[i].count === 1) {
+      } else if (card[i].card === evt.target.dataset.card && card[i].count === 1) {
         setCards(JSON.parse(JSON.stringify(gameData)));
         setScore(0);
       }
